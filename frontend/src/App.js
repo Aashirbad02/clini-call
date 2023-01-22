@@ -8,6 +8,7 @@ function App() {
   return (
     <div>
       <Navbar/>
+      <Hero/>
       <Routes>
         <Route exact path='/hero' element={<Hero/>}> </Route>
         {/* <Route exact path='/about' element={<About/>}> </Route> */}
