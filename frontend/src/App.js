@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <Hero/>
+      {/* <Hero/> */}
       <Routes>
+        <Route exact path='/' element={<Hero/>}> </Route>
         <Route exact path='/hero' element={<Hero/>}> </Route>
         {/* <Route exact path='/about' element={<About/>}> </Route> */}
         <Route exact path='/login' element={<Login/>}> </Route>
