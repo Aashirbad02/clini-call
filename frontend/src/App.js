@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import {Routes,Route} from 'react-router-dom'
 import Signup from "./components/signup";
+import Doctors from './components/DoctorCard/Doctors'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         {/* <Route exact path='/blood' element={<Blood/>}> </Route>
         <Route exact path='/doctor' element={<Doctor/>}> </Route> */}
       </Routes>
-      {/* <Doctors/> */}
+      <Doctors/>
     </div>
   );
 }
