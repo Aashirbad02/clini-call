@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex pr-4">
           <button className="border-none bg-transparent text-black mr-4">
-            <NavLink className="nav-link" to="/register">
+            <NavLink className="nav-link" to="/login">
               Log
             </NavLink>
             in

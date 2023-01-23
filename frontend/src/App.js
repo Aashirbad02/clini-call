@@ -1,5 +1,5 @@
 import Hero from "./components/Hero";
-import SignIn from "./components/SignIn";
+import Login from "./components/Login";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/signup";
 import Dashboard from "./components/Dashboard";
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/hero" element={<Hero />}>
           {" "}
         </Route>
-        <Route exact path="/register" element={<SignIn />}>
+        <Route exact path="/login" element={<Login />}>
           {" "}
         </Route>
         <Route exact path="/signup" element={<Signup />}>

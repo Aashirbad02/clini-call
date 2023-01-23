@@ -159,6 +159,12 @@ const Dashboard = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-2">
+                      <div className="px-4 py-2 font-semibold">
+                        Phone Number
+                      </div>
+                      <div className="px-4 py-2">987654321</div>
+                    </div>
+                    <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Pincode</div>
                       <div className="px-4 py-2">751023</div>
                     </div>

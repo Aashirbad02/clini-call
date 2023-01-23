@@ -19,8 +19,8 @@ router.post("/register", async (req, res) => {
     email,
     phone,
     bloodg,
-    height,
-    weight,
+    gender,
+    pincode,
     age,
     password,
     cfpassword,
@@ -31,9 +31,9 @@ router.post("/register", async (req, res) => {
     !email ||
     !phone ||
     !bloodg ||
-    !height ||
-    !weight ||
     !age ||
+    !gender ||
+    !pincode ||
     !password ||
     !cfpassword
   ) {
@@ -56,9 +56,9 @@ router.post("/register", async (req, res) => {
       email,
       phone,
       bloodg,
-      height,
-      weight,
       age,
+      gender,
+      pincode,
       password,
       cfpassword,
     });

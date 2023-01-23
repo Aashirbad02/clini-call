@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("/signin", {
+    const res = await fetch("http://localhost:5000/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -103,4 +103,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;
