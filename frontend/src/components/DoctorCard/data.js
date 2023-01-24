@@ -14,20 +14,13 @@ const data = [
     id: 1,
     img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674366117/pexels-andrea-piacquadio-774909_1_hb4sme.jpg',
     designation: "Medicines",
-    pincode:'751001',
+    pincode:'751002',
     name: "Dr. Bismita Nayak ",
     email: "viratkohli123@gmail.com",
     contact: "7657013016",
+    address:'Apollo Clinic',
   },
-  {
-    id: 1,
-    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674366117/pexels-andrea-piacquadio-774909_1_hb4sme.jpg',
-    designation: "Pediatrics",
-    pincode:'751002',
-    name: "Dr. Rajlochan Nayak ",
-    email: "viratkohli123@gmail.com",
-    contact: "7657013016",
-  },
+ 
   {
     id: 2,
     img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
@@ -36,6 +29,7 @@ const data = [
     name: "Dr. Binod Bihari Sahu",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic',
   },
   {
     id: 3,
@@ -45,6 +39,7 @@ const data = [
     name: "Dr. M. Srinivasan ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic',
   },
   {
     id: 4,
@@ -54,6 +49,8 @@ const data = [
     name: "Dr. Santosh Kumar ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Fortis Hospital'
+
   },
   {
     id: 5,
@@ -63,6 +60,8 @@ const data = [
     name: "Dr. Samir K. Patra",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Fortis Hospital'
+
   },
   {
     id: 6,
@@ -72,6 +71,7 @@ const data = [
     name: "Dr. Sujit K. Bhutia ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'
   },
   {
     id: 7,
@@ -81,6 +81,7 @@ const data = [
     name: "Dr. Rohan Dhiman ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'
   },
   {
     id: 8,
@@ -90,6 +91,7 @@ const data = [
     name: "Dr. Bibekanand Mallick ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'
   },
   {
     id: 9,
@@ -99,6 +101,7 @@ const data = [
     pincode:'751009',
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'
   },
   {
     id: 10,
@@ -108,6 +111,7 @@ const data = [
     name: "Dr. Monalisa Mishra ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'
   },
   {
     id: 11,
@@ -117,6 +121,57 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
+    address:'Apollo Clinic'    
+  },
+  {
+    id: 12,
+    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
+    designation: "General studiess",
+    pincode:'751004',
+    name: "Dr. Bijesh K. Biswal ",
+    email: "viratkohli123@gmail.com",
+    contact: "9937775273",
+    address:'Apollo Clinic'    
+  },
+  {
+    id: 13,
+    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
+    designation: "General studiess",
+    pincode:'751002',
+    name: "Dr. Bijesh K. Biswal ",
+    email: "viratkohli123@gmail.com",
+    contact: "9937775273",
+    address:'Apollo Clinic'    
+  },
+  {
+    id: 14,
+    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
+    designation: "General studiess",
+    pincode:'751001',
+    name: "Dr. Bijesh K. Biswal ",
+    email: "viratkohli123@gmail.com",
+    contact: "9937775273",
+    address:'Apollo Clinic'    
+  },
+  {
+    id: 15,
+    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
+    designation: "General studiess",
+    pincode:'751001',
+    name: "Dr. Bijesh K. Biswal ",
+    email: "viratkohli123@gmail.com",
+    contact: "9937775273",
+    address:'Apollo Clinic'    
+  },
+  {
+    id: 16,
+    img: 'https://res.cloudinary.com/dnqipwdsl/image/upload/v1674368200/pexels-pixabay-220453_1_zlp84w.jpg',
+    designation: "General studiess",
+    pincode:'751001',
+    name: "Dr. Bijesh K. Biswal ",
+    email: "viratkohli123@gmail.com",
+    contact: "9937775273",
+    address:'Apollo Clinic'    
   },
 ];
 
