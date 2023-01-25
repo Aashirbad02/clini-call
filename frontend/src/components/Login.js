@@ -1,22 +1,23 @@
 import React, { useState, useContext } from "react";
-import { Link, useNavigate,NavLink } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { UserContext } from "../App";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { dispatch } = useContext(UserContext);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("password");
-  const [passwordType,setPasswordType]=useState('')
-  const toggle=()=>{
-    if(passwordType==='password'){
-      setPasswordType('text');
+  const [password, setPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("");
+  const toggle = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    } else {
+      setPasswordType("password");
     }
-    else{
-      setPasswordType('password')
-    }
-  }
+  };
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -30,17 +31,20 @@ const Login = () => {
         password,
       }),
     });
-    const data = await res.json();
+    const data = await res;
 
-    if (data.status === 400 || !data) {
-      window.alert("INVALID CREDENTIALS !");
-      console.log("INVALID CREDENTIALS !");
+    if (data.status === 401 || !data) {
+      toast.error("Invalid Credentials");
+      data.json().then((e) => {
+        console.log(e.error);
+      });
     } else {
       dispatch({ type: "USER", payload: true });
-
-      window.alert("LOGIN SUCCESSFUL");
-      console.log("LOGIN SUCCESSFUL");
-      navigate("/");
+      toast.success("Successfully Logged In 🎉");
+      data.json().then((e) => {
+        console.log(e.message);
+      });
+      navigate("/dashboard");
     }
   };
   return (
@@ -72,7 +76,12 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button  className="btn btn-outline-primary" onClick={toggle} >{passwordType==='password'? <i className="bi bi-eye-slash"></i> : <i className="bi bi-eye"></i> }
+              <button className="btn btn-outline-primary" onClick={toggle}>
+                {passwordType === "password" ? (
+                  <i className="bi bi-eye-slash"></i>
+                ) : (
+                  <i className="bi bi-eye"></i>
+                )}
               </button>
             </div>
             <button
@@ -82,12 +91,15 @@ const Login = () => {
             >
               Login
             </button>
+            <ToastContainer />
           </form>
 
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
             <p>Don't have an account?</p>
             <button className="py-2 px-5 bg-[#002D74] text-white text-md border rounded-xl hover:scale-110 duration-300">
-              <NavLink className='nav-link' to='/signup'>Register</NavLink>
+              <NavLink className="nav-link" to="/signup">
+                Register
+              </NavLink>
             </button>
           </div>
         </div>

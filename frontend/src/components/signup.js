@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate,NavLink } from "react-router-dom";
-
+import { useNavigate, NavLink } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -55,16 +56,20 @@ const SignUp = () => {
       }),
     });
 
-    const data = await res.json();
+    const data = await res;
 
     if (data.status === 422 || !data) {
-      window.alert("INVALID REGISTRATION !");
-      console.log("INVALID REGISTRATION !");
+      data.json().then((e) => {
+        toast.error(e.error);
+        console.log(e.error);
+      });
     } else {
-      window.alert("REGISTRATION SUCCESSFUL");
-      console.log("REGISTRATION SUCCESSFUL");
+      data.json().then((e) => {
+        toast.success("Successfully Registered");
+        console.log(e.message);
+      });
 
-      navigate("/signin");
+      navigate("/login");
     }
   };
   return (
@@ -87,7 +92,7 @@ const SignUp = () => {
               <form method="POST" className="lg:col-span-2">
                 <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                   <div className="md:col-span-5">
-                    <label for="full_name">Full Name</label>
+                    <label htmlFor="full_name">Full Name</label>
                     <input
                       type="text"
                       className="block border border-grey-light w-full p-3 rounded mb-2"
@@ -99,7 +104,7 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-5">
-                    <label for="email">Email Address</label>
+                    <label htmlFor="email">Email Address</label>
                     <input
                       type="text"
                       className="block border border-grey-light w-full p-3 rounded mb-2"
@@ -110,7 +115,7 @@ const SignUp = () => {
                     />
                   </div>
                   <div className="md:col-span-5">
-                    <label for="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                     <input
                       type="number"
                       className="block border border-grey-light w-full p-3 rounded mb-2"
@@ -121,7 +126,7 @@ const SignUp = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label for="age">Age</label>
+                    <label htmlFor="age">Age</label>
                     <input
                       type="number"
                       className="block border border-grey-light w-full p-3 rounded mb-2"
@@ -133,9 +138,9 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label for="bloodg">Blood Group</label>
+                    <label htmlFor="bloodg">Blood Group</label>
                     <select
-                      class="form-select appearance-none block
+                      className="form-select appearance-none block
                             w-full
                             px-3
                             py-1.5
@@ -149,11 +154,11 @@ const SignUp = () => {
                             ease-in-out
                             m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            value={user.age}
-                            onChange={handleInput}
+                      value={user.age}
+                      onChange={handleInput}
                       aria-label="Default select example"
                     >
-                      <option selected>select</option>
+                      <option>Select</option>
                       <option value="1">A+</option>
                       <option value="2">A-</option>
                       <option value="3">B+</option>
@@ -165,7 +170,7 @@ const SignUp = () => {
                     </select>
                   </div>
                   <div className="md:col-span-2">
-                    <label for="gender">Gender</label>
+                    <label htmlFor="gender">Gender</label>
                     <input
                       type="text"
                       className="block border border-grey-light w-full p-2 rounded mb-2"
@@ -177,7 +182,7 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label for="pincode"> Pincode</label>
+                    <label htmlFor="pincode"> Pincode</label>
                     <input
                       type="number"
                       className="block border border-grey-light w-full p-2 rounded mb-2"
@@ -189,7 +194,7 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input
                       type="password"
                       className="block border border-grey-light w-full p-2 rounded mb-2"
@@ -200,7 +205,7 @@ const SignUp = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label for="password">Confirm Password</label>
+                    <label htmlFor="password">Confirm Password</label>
                     <input
                       type="passsword"
                       className="block border border-grey-light w-full p-2 rounded mb-2"
@@ -218,18 +223,21 @@ const SignUp = () => {
                       >
                         Register
                       </button>
+                      <ToastContainer />
                     </div>
                   </div>
-                  <div class="md:col-span-5 flex my-4 justify-center">
-                    <p class='mx-2 my-auto font-semibold' >Already have an account?</p>
-                    <div >
-                      <button
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  mx-auto rounded"><NavLink class='nav-link' to='/login'>Login</NavLink>
+                  <div className="md:col-span-5 flex my-4 justify-center">
+                    <p className="mx-2 my-auto font-semibold">
+                      Already have an account?
+                    </p>
+                    <div>
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  mx-auto rounded">
+                        <NavLink className="nav-link" to="/login">
+                          Login
+                        </NavLink>
                       </button>
                     </div>
                   </div>
-                 
-
                 </div>
               </form>
             </div>

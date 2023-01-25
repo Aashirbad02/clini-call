@@ -12,7 +12,6 @@ import bgImg from "../assets/cyber-bg.png";
 const Hero = () => {
   return (
     <div>
-      {" "}
       <Navbar />
       <div
         name="home"
@@ -25,7 +24,7 @@ const Hero = () => {
               Quality Healthcare
             </h1>
             {/* <p className='text-2xl'>This is our Tech brand.</p> */}
-            <button className="py-3 px-6 sm:w-[60%] my-4 bg-indigo-700 text-white rounded-md">
+            <button className="py-3 px-6 sm:w-[60%] my-4">
               Looking for doctor
             </button>
           </div>

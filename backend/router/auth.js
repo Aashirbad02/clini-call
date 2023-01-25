@@ -94,9 +94,9 @@ router.post("/signin", async (req, res) => {
         httpOnly: true,
       });
 
-      if (!isMatch) res.json({ error: "Invalid Credentials" });
+      if (!isMatch) res.status(401).json({ error: "Invalid Credentials" });
       else res.json({ message: "User signed in successfully" });
-    } else res.json({ error: "Invalid Credentials" });
+    } else res.status(401).json({ error: "Invalid Credentials" });
   } catch (error) {
     console.log(error);
   }

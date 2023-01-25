@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import { createContext, useReducer } from "react";
 
 import { initialState, reducer } from "../src/reducer/UseReducer";
+import Doctors from "./components/DoctorCard/Doctors";
 
 //1: contextAPI
 export const UserContext = createContext();
@@ -21,6 +22,7 @@ const Routing = () => {
       <Route exact path="/signup" element={<SignUp />}></Route>
       <Route exact path="/signout" element={<SignOut />}></Route>
       <Route exact path="/dashboard" element={<Dashboard />}></Route>
+      <Route exact path="/doctors" element={<Doctors />}></Route>
     </Routes>
   );
 };
