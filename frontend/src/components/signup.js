@@ -138,36 +138,28 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label htmlFor="bloodg">Blood Group</label>
+                  <label for="bloodg">Blood Group</label>
                     <select
-                      className="form-select appearance-none block
-                            w-full
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding bg-no-repeat
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                      value={user.age}
-                      onChange={handleInput}
-                      aria-label="Default select example"
-                    >
-                      <option>Select</option>
-                      <option value="1">A+</option>
-                      <option value="2">A-</option>
-                      <option value="3">B+</option>
-                      <option value="3">B+</option>
-                      <option value="3">O+</option>
-                      <option value="3">O-</option>
-                      <option value="3">AB+</option>
-                      <option value="3">AB-</option>
+                      id="countries"
+                      
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      >
+                      
+                      <option selected>Choose</option>
+                      <option value="US">A+</option>
+                      <option value="CA">A-</option>
+                      <option value="FR">B+</option>
+                      <option value="DE">B-</option>
+                      <option value="DE">AB+</option>
+                      <option value="DE">AB-</option>
+                      <option value="DE">O+</option>
+                      <option value="DE">O-</option>
                     </select>
+                    <input type='text'
+                    value={user.bloodg}
+                    onChange={handleInput}
+
+                     /> 
                   </div>
                   <div className="md:col-span-2">
                     <label htmlFor="gender">Gender</label>

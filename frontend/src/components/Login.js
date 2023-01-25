@@ -3,6 +3,8 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import { UserContext } from "../App";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Login = () => {
   const { dispatch } = useContext(UserContext);
@@ -67,7 +69,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="relative">
+            <div className="relative flex">
               <input
                 className="p-2 rounded-xl border w-full"
                 type={passwordType}
@@ -76,12 +78,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="btn btn-outline-primary" onClick={toggle}>
-                {passwordType === "password" ? (
-                  <i className="bi bi-eye-slash"></i>
-                ) : (
-                  <i className="bi bi-eye"></i>
-                )}
+              <button onClick={toggle} > { passwordType==="password"? <VisibilityOffIcon/> :<VisibilityIcon/> }
               </button>
             </div>
             <button
