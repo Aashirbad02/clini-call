@@ -19,9 +19,9 @@ router.post("/register", async (req, res) => {
     email,
     phone,
     bloodg,
+    age,
     gender,
     pincode,
-    age,
     password,
     cfpassword,
   } = req.body;
@@ -102,9 +102,9 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-// About Us Page
+// Dashboard Page
 
-router.get("/about", authenticate, (req, res) => {
+router.get("/dashboard", authenticate, (req, res) => {
   res.send(req.rootUser);
 });
 

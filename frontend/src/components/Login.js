@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
 const Login = () => {
+  const { dispatch } = useContext(UserContext);
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/signin", {
+    const res = await fetch("/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +27,8 @@ const Login = () => {
       window.alert("INVALID CREDENTIALS !");
       console.log("INVALID CREDENTIALS !");
     } else {
+      dispatch({ type: "USER", payload: true });
+
       window.alert("LOGIN SUCCESSFUL");
       console.log("LOGIN SUCCESSFUL");
       navigate("/");
@@ -40,7 +45,7 @@ const Login = () => {
             If you are already a member, easily log in
           </p>
 
-          <form action="" className="flex flex-col gap-4">
+          <form method="POST" className="flex flex-col gap-4">
             <input
               className="p-2 mt-8 rounded-xl border"
               type="email"
