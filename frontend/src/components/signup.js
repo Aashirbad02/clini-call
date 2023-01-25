@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavLink } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -134,14 +134,35 @@ const SignUp = () => {
 
                   <div className="md:col-span-2">
                     <label for="bloodg">Blood Group</label>
-                    <input
-                      type="text"
-                      className="block border border-grey-light w-full p-2 rounded mb-2"
-                      name="bloodg"
-                      placeholder="B+"
-                      value={user.bloodg}
-                      onChange={handleInput}
-                    />
+                    <select
+                      class="form-select appearance-none block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding bg-no-repeat
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            value={user.age}
+                            onChange={handleInput}
+                      aria-label="Default select example"
+                    >
+                      <option selected>select</option>
+                      <option value="1">A+</option>
+                      <option value="2">A-</option>
+                      <option value="3">B+</option>
+                      <option value="3">B+</option>
+                      <option value="3">O+</option>
+                      <option value="3">O-</option>
+                      <option value="3">AB+</option>
+                      <option value="3">AB-</option>
+                    </select>
                   </div>
                   <div className="md:col-span-2">
                     <label for="gender">Gender</label>
@@ -189,16 +210,26 @@ const SignUp = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  <div className="md:col-span-5 text-right">
+                  <div className="md:col-span-5 text-center">
                     <div className="inline-flex items-end">
                       <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={sendData}
                       >
-                        Submit
+                        Register
                       </button>
                     </div>
                   </div>
+                  <div class="md:col-span-5 flex my-4 justify-center">
+                    <p class='mx-2 my-auto font-semibold' >Already have an account?</p>
+                    <div >
+                      <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  mx-auto rounded"><NavLink class='nav-link' to='/login'>Login</NavLink>
+                      </button>
+                    </div>
+                  </div>
+                 
+
                 </div>
               </form>
             </div>

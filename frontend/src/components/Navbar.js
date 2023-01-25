@@ -143,14 +143,14 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="hidden md:flex pr-4">
-              <button className="border-none bg-transparent text-black mr-4">
+              <button className="py-2 px-6 w-20 my-2 bg-indigo-700 text-white rounded-md">
                 <NavLink className="nav-link font-semibold" to="/login">
-                  Login
+                Login
                 </NavLink>
               </button>
-              <button className="px-8 py-3">
+              <button className="px-4 py-3">
                 <NavLink className="nav-link font-semibold" to="/signup">
-                  Sign Up
+                  Signup
                 </NavLink>
               </button>
             </div>
@@ -204,7 +204,7 @@ const Navbar = () => {
               </Link>
             </li>
             <div className="flex flex-col my-4">
-              <button className="bg-transparent text-indigo-600 px-8 py-3 mb-4">
+              <button className="py-3 px-6 sm:w-[20%] my-4 bg-indigo-700 text-white rounded-md">
                 <NavLink className="nav-link font-semibold" to="/login">
                   Login
                 </NavLink>
