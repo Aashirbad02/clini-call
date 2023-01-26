@@ -12,14 +12,14 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordType, setPasswordType] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
   const pswdtoggle = (e) => {
-    e.preventDefault()
     if (passwordType === "password") {
       setPasswordType("text");
     } else {
       setPasswordType("password");
     }
+    e.preventDefault()
   };
 
   const loginUser = async (e) => {
@@ -105,7 +105,7 @@ const Login = () => {
         <div className="md:block hidden w-1/2">
           <img
             className="rounded-2xl"
-            src="https://images.unsplash.com/photo-1616606103915-dea7be788566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+            src="https://res.cloudinary.com/dnqipwdsl/image/upload/v1674740143/pexels-tima-miroshnichenko-8376309_vsjsij.jpg"
             alt="oops"
           />
         </div>

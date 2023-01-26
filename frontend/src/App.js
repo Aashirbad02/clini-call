@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp";
 import SignOut from "./components/SignOut";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 import { createContext, useReducer } from "react";
 
 import { initialState, reducer } from "../src/reducer/UseReducer";
@@ -23,6 +24,7 @@ const Routing = () => {
       <Route exact path="/signout" element={<SignOut />}></Route>
       <Route exact path="/dashboard" element={<Dashboard />}></Route>
       <Route exact path="/doctors" element={<Doctors />}></Route>
+      <Route exact path="/about" element={<About />}></Route>
     </Routes>
   );
 };
