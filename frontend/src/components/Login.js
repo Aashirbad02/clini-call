@@ -13,7 +13,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("");
-  const toggle = () => {
+  const pswdtoggle = (e) => {
+    e.preventDefault()
     if (passwordType === "password") {
       setPasswordType("text");
     } else {
@@ -78,7 +79,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button onClick={toggle} > { passwordType==="password"? <VisibilityOffIcon/> :<VisibilityIcon/> }
+              <button onClick={pswdtoggle} > { passwordType==="password"? <VisibilityOffIcon/> :<VisibilityIcon/> }
               </button>
             </div>
             <button

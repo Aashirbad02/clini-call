@@ -2,14 +2,16 @@
 import React, { useState } from "react";
 import data from "./data";
 import Doctor from "./Doctor";
-const Doctors = ({ name, email, contact, img, designation, address }) => {
+const Doctors = ({ name, email, contact, img, designation, address,consultation }) => {
   const [team, setTeam] = useState(data);
   const [search, setSearch] = useState("");
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <div className="text-2xl my-2 mx-auto flex justify-center">
+    <div className=" md:max-w-[1440] py-24 relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="text-2xl my-2 mx-auto flex justify-center font-semibold">
         Doctors near you
+      </div>
+      <div className="w-20 h-1 my-3 bg-indigo-700 flex justify-center rounded-md mx-auto ">
       </div>
       <div className="flex items-center justify-center pb-4 bg-white dark:bg-gray-900">
         <label
@@ -42,24 +44,27 @@ const Doctors = ({ name, email, contact, img, designation, address }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search for users"
+            placeholder="Search for doctors"
           />
         </div>
       </div>
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
+      <table className="md:w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className=" w-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr className="md:w-full">
+            <th scope="col" className="px-20 py-3">
+              Name
+            </th>
             <th scope="col" className="px-6 py-3">
               Specialisation
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" className="px-8 py-3">
               Contact
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" className="px-16 py-3">
               Email
             </th>
-            <th scope="col" className="px-6 py-3">
-              Pincode
+            <th scope="col" className="px-2 py-3">
+              Consultation Fees
             </th>
           </tr>
         </thead>
@@ -78,6 +83,7 @@ const Doctors = ({ name, email, contact, img, designation, address }) => {
                 contact={data.contact}
                 pincode={data.pincode}
                 address={data.address}
+                consultation={data.consultation}
               />
             ))}
         </tbody>

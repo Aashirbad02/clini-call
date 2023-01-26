@@ -39,7 +39,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="p-4">
-                  <NavLink className="nav-link" to="/doctor">
+                  <NavLink className="nav-link" to="/doctors">
                     Doctor
                   </NavLink>
                 </li>
@@ -65,7 +65,9 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
               >
-                Home
+                 <NavLink className="nav-link" to="/hero">
+                    Home
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -76,7 +78,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                About
+                 <NavLink className="nav-link" to="/about">
+                    About
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -87,7 +91,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                Dashboard
+                <NavLink className="nav-link" to="/dashboard">
+                    Dashboard
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -98,7 +104,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                Doctor
+                <NavLink className="nav-link" to="/doctors">
+                    Doctor
+                  </NavLink>
               </Link>
             </li>
             <div className="flex flex-col my-4">
@@ -136,7 +144,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="p-4">
-                  <NavLink className="nav-link" to="/doctor">
+                  <NavLink className="nav-link" to="/doctors">
                     Doctor
                   </NavLink>
                 </li>
@@ -167,7 +175,9 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
               >
-                Home
+                <NavLink className="nav-link" to="/hero">
+                    Home
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -178,7 +188,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                About
+                <NavLink className="nav-link" to="/about">
+                    About
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -189,7 +201,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                Dashboard
+                <NavLink className="nav-link" to="/dashboard">
+                    Dashboard
+                  </NavLink>
               </Link>
             </li>
             <li className="border-b-2 border-zinc-300 w-full">
@@ -200,7 +214,9 @@ const Navbar = () => {
                 offset={-200}
                 duration={500}
               >
-                Doctor
+                <NavLink className="nav-link" to="/doctors">
+                    Doctor
+                  </NavLink>
               </Link>
             </li>
             <div className="flex flex-col my-4">
