@@ -19,6 +19,8 @@ const data = [
     email: "viratkohli123@gmail.com",
     contact: "7657013016",
     address:'Apollo Clinic',
+    consultation:'200',
+
   },
  
   {
@@ -30,6 +32,8 @@ const data = [
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
     address:'Apollo Clinic',
+    consultation:"300"
+
   },
   {
     id: 3,
@@ -40,6 +44,7 @@ const data = [
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
     address:'Apollo Clinic',
+    consultation:"400"
   },
   {
     id: 4,
@@ -49,7 +54,8 @@ const data = [
     name: "Dr. Santosh Kumar ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Fortis Hospital'
+    address:'Fortis Hospital',
+    consultation:"600"
 
   },
   {
@@ -60,7 +66,8 @@ const data = [
     name: "Dr. Samir K. Patra",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Fortis Hospital'
+    address:'Fortis Hospital',
+    consultation:"800"
 
   },
   {
@@ -71,7 +78,8 @@ const data = [
     name: "Dr. Sujit K. Bhutia ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'
+    address:'Apollo Clinic',
+    consultation:"200"
   },
   {
     id: 7,
@@ -81,7 +89,8 @@ const data = [
     name: "Dr. Rohan Dhiman ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'
+    address:'Apollo Clinic',
+    consultation:"400"
   },
   {
     id: 8,
@@ -91,7 +100,8 @@ const data = [
     name: "Dr. Bibekanand Mallick ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'
+    address:'Apollo Clinic',
+    consultation:"300"
   },
   {
     id: 9,
@@ -101,7 +111,8 @@ const data = [
     pincode:'751009',
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'
+    address:'Apollo Clinic',
+    consultation:"200"
   },
   {
     id: 10,
@@ -111,7 +122,8 @@ const data = [
     name: "Dr. Monalisa Mishra ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'
+    address:'Apollo Clinic',
+    consultation:"600"
   },
   {
     id: 11,
@@ -121,7 +133,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic',
+    consultation:"400"   
   },
   {
     id: 12,
@@ -131,7 +144,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic', 
+    consultation:"200"   
   },
   {
     id: 13,
@@ -141,7 +155,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic',
+    consultation:"500"    
   },
   {
     id: 14,
@@ -151,7 +166,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic',
+    consultation:"500"    
   },
   {
     id: 15,
@@ -161,7 +177,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic', 
+    consultation:"200"   
   },
   {
     id: 16,
@@ -171,7 +188,8 @@ const data = [
     name: "Dr. Bijesh K. Biswal ",
     email: "viratkohli123@gmail.com",
     contact: "9937775273",
-    address:'Apollo Clinic'    
+    address:'Apollo Clinic',
+    consultation:"200"    
   },
 ];
 

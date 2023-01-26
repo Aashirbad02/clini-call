@@ -274,7 +274,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <Doctors />
+      
     </div>
   );
 };
