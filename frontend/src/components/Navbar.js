@@ -19,10 +19,10 @@ const Navbar = () => {
         <div className="w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg">
           <div className="px-2 flex justify-between items-center w-full h-full">
             <div className="flex items-center">
-              <h1 className="text-3xl font-bold mr-4 sm:text-4xl">
-                CliniCall.
-              </h1>
               <ul className="hidden md:flex cursor-pointer text-md font-semibold">
+              <li className="text-3xl font-bold mr-4 sm:text-4xl cursor-pointer">
+               <NavLink className='nav-link' to='/hero'>CliniCall.</NavLink>
+              </li>
                 <li className="p-4">
                   <NavLink className="nav-link" to="/hero">
                     Home
@@ -125,7 +125,8 @@ const Navbar = () => {
           <div className="px-2 flex justify-between items-center w-full h-full">
             <div className="flex items-center">
               <h1 className="text-3xl font-bold mr-4 sm:text-4xl">
-                CliniCall.
+              <NavLink className='nav-link' to='/hero'>CliniCall.</NavLink>
+
               </h1>
               <ul className="hidden md:flex cursor-pointer text-md font-semibold">
                 <li className="p-4">
@@ -151,7 +152,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="hidden md:flex pr-4">
-              <button className="py-2 px-6 w-20 my-2 bg-indigo-700 text-white rounded-md">
+              <button className="py-2 px-4 w-20 my-2 bg-indigo-700 text-white rounded-md">
                 <NavLink className="nav-link font-semibold" to="/login">
                 Login
                 </NavLink>

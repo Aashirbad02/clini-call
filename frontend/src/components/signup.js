@@ -78,15 +78,15 @@ const SignUp = () => {
         <div className="md:block hidden w-1/2 h-3/4 ">
           <img
             className="rounded-2xl object-cover"
-            src="https://images.unsplash.com/photo-1616606103915-dea7be788566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+            src="https://res.cloudinary.com/dnqipwdsl/image/upload/v1674732854/pexels-karolina-grabowska-4386464_ukkzsm.jpg"
             alt="oops"
           />
         </div>
         <div>
-          <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8  ">
+          <div className="bg-white rounded-lg shadow-lg p-4 px-4 md:p-8  ">
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-2">
               <div className="text-gray-600">
-                <p className="font-medium text-lg">Personal Details</p>
+                <p className="font-bold text-lg">Personal Details</p>
               </div>
 
               <form method="POST" className="lg:col-span-2">
@@ -219,7 +219,7 @@ const SignUp = () => {
                   <div className="md:col-span-5 text-center">
                     <div className="inline-flex items-end">
                       <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 px-4 rounded"
                         onClick={sendData}
                       >
                         Register
@@ -231,8 +231,8 @@ const SignUp = () => {
                     <p className="mx-2 my-auto font-semibold">
                       Already have an account?
                     </p>
-                    <div>
-                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  mx-auto rounded">
+                    <div className="py-2">
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4  mx-auto rounded">
                         <NavLink className="nav-link" to="/login">
                           Login
                         </NavLink>
