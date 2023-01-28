@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
 import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import Donors from "./BloodDonation/Donors";
+import axiosApp from "../utils/axiosConfig";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -11,17 +12,8 @@ const Dashboard = () => {
 
   const callDashboard = async () => {
     try {
-      const res = await fetch("/dashboard", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-
-      const data = await res.json();
-      setUserData(data);
+      const res = await axiosApp.get("dashboard");
+      setUserData(res.data);
 
       if (!res.status === 200) {
         const error = new Error(res.error);

@@ -1,10 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-
-
-import bgImg from "../assets/cyber-bg.png";
-
 const Hero = () => {
   return (
     <div>
@@ -24,10 +20,13 @@ const Hero = () => {
               Looking for doctor
             </button>
           </div>
-          <div >
-            <img className="w-full " src='https://res.cloudinary.com/dnqipwdsl/image/upload/v1674746379/cyber-bg_ce0q1c.png' alt="/" />
+          <div>
+            <img
+              className="w-full "
+              src="https://res.cloudinary.com/dnqipwdsl/image/upload/v1674746379/cyber-bg_ce0q1c.png"
+              alt="/"
+            />
           </div>
-           
         </div>
       </div>
     </div>

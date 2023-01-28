@@ -2,24 +2,16 @@
 import React, { useState, useEffect } from "react";
 import Donor from "./Donor";
 import axios from "axios";
+import { URL } from "../../App";
+import { axiosApp1 } from "../../utils/axiosConfig";
 
 const Donors = ({}) => {
   const [search, setSearch] = useState("");
-  const [donorsData, setDonorsData] = useState([
-    {
-      index: 1,
-      name: "Jyoti",
-      gender: "Male",
-      age: "20",
-      bloodg: "B+",
-      phone: "483792938293",
-      pincode: "789456",
-    },
-  ]);
+  const [donorsData, setDonorsData] = useState([]);
 
   const getBloodGroup = async () => {
     try {
-      const res = await axios.get("/getData");
+      const res = await axiosApp1.get("getData");
       setDonorsData(res.data);
     } catch (error) {
       console.log(error.message);
@@ -95,7 +87,7 @@ const Donors = ({}) => {
               })
               .map((data) => (
                 <Donor
-                  key={data.index}
+                  key={data._id}
                   name={data.name}
                   gender={data.gender}
                   age={data.age}

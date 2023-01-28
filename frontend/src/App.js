@@ -7,13 +7,12 @@ import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import { createContext, useReducer } from "react";
-
 import { initialState, reducer } from "../src/reducer/UseReducer";
 import Doctors from "./components/DoctorCard/Doctors";
-
 //1: contextAPI
 export const UserContext = createContext();
 
+export const URL = process.env.REACT_APP_SERVER_URL;
 const Routing = () => {
   return (
     <Routes>

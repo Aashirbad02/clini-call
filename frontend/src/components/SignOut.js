@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
+import axiosApp from "../utils/axiosConfig";
 
 const SignOut = () => {
   const { dispatch } = useContext(UserContext);
@@ -8,14 +9,7 @@ const SignOut = () => {
 
   //Promises
   useEffect(() => {
-    fetch("/signout", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    })
+    axiosApp("signout")
       .then((res) => {
         dispatch({ type: "USER", payload: false });
         navigate("/login");

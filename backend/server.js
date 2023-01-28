@@ -8,12 +8,12 @@ app.use(cookieParser());
 
 require("./db/conn");
 
+const corsConf = {
+  origin: "http://localhost:3000",
+  credentials: true,
+};
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://clinicall.onrender.com"],
-  })
-);
+app.use(cors(corsConf));
 app.use(require("./router/auth"));
 
 const PORT = process.env.PORT || 5000;

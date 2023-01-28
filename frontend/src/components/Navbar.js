@@ -8,8 +8,6 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
-  const handleClose = () => setNav(!nav);
-
   const { state } = useContext(UserContext);
 
   const RenderNavbar = () => {

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { URL } from "../App";
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -38,25 +41,18 @@ const SignUp = () => {
       cfpassword,
     } = user;
 
-    const res = await fetch("/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        bloodg,
-        age,
-        gender,
-        pincode,
-        password,
-        cfpassword,
-      }),
+    const res = await axios.post(`/register`, {
+      name,
+      email,
+      phone,
+      bloodg,
+      age,
+      gender,
+      pincode,
+      password,
+      cfpassword,
     });
-
-    const data = await res;
+    const data = res;
 
     if (data.status === 422 || !data) {
       data.json().then((e) => {
@@ -138,14 +134,12 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                  <label for="bloodg">Blood Group</label>
+                    <label for="bloodg">Blood Group</label>
                     <select
                       id="countries"
-                      
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                      
-                      <option >Choose</option>
+                    >
+                      <option>Choose</option>
                       <option value="US">A+</option>
                       <option value="CA">A-</option>
                       <option value="FR">B+</option>
@@ -155,30 +149,27 @@ const SignUp = () => {
                       <option value="DE">O+</option>
                       <option value="DE">O-</option>
                     </select>
-                    <input type='text'
-                    value={user.bloodg}
-                    onChange={handleInput}
-
-                     /> 
+                    <input
+                      type="text"
+                      value={user.bloodg}
+                      onChange={handleInput}
+                    />
                   </div>
                   <div className="md:col-span-2">
                     <label htmlFor="gender">Gender</label>
                     <select
                       id="countries"
-                      
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                      
-                      <option >Choose</option>
+                    >
+                      <option>Choose</option>
                       <option value="US">Male</option>
                       <option value="CA">Female</option>
                       <option value="CA">Other</option>
-                      
                     </select>
-                    <input type='text'
-                    value={user.gender}
-                    onChange={handleInput}
-
+                    <input
+                      type="text"
+                      value={user.gender}
+                      onChange={handleInput}
                     />
                   </div>
 

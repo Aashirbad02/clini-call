@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { axiosApp1 } from "../utils/axiosConfig";
 
 const Login = () => {
   const { dispatch } = useContext(UserContext);
@@ -24,17 +25,9 @@ const Login = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("/signin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-    const data = await res;
+
+    const res = await axiosApp1.post("signin", { email, password });
+    const data = res;
 
     if (data.status === 401 || !data) {
       toast.error("Invalid Credentials");
@@ -44,9 +37,6 @@ const Login = () => {
     } else {
       dispatch({ type: "USER", payload: true });
       toast.success("Successfully Logged In 🎉");
-      data.json().then((e) => {
-        console.log(e.message);
-      });
       navigate("/dashboard");
     }
   };
