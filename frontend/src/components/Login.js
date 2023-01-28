@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { UserContext } from "../App";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 const Login = () => {
   const { dispatch } = useContext(UserContext);
@@ -19,7 +19,7 @@ const Login = () => {
     } else {
       setPasswordType("password");
     }
-    e.preventDefault()
+    e.preventDefault();
   };
 
   const loginUser = async (e) => {
@@ -79,7 +79,13 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button onClick={pswdtoggle} > { passwordType==="password"? <VisibilityOffIcon/> :<VisibilityIcon/> }
+              <button onClick={pswdtoggle}>
+                {" "}
+                {passwordType === "password" ? (
+                  <VisibilityOffIcon />
+                ) : (
+                  <VisibilityIcon />
+                )}
               </button>
             </div>
             <button

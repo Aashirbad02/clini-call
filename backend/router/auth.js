@@ -109,8 +109,13 @@ router.get("/dashboard", authenticate, (req, res) => {
 });
 
 //Get data from the user for contact page and home page
-router.get("/getData", authenticate, (req, res) => {
-  res.send(req.rootUser);
+router.get("/getData", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
 });
 
 //Sign Out Page
