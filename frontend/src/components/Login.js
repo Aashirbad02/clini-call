@@ -27,13 +27,10 @@ const Login = () => {
     e.preventDefault();
 
     const res = await axiosApp1.post("signin", { email, password });
-    const data = res;
-
-    if (data.status === 401 || !data) {
+    console.log(res);
+    if (res.status === 401 || !res) {
       toast.error("Invalid Credentials");
-      data.json().then((e) => {
-        console.log(e.error);
-      });
+      console.log(res.data);
     } else {
       dispatch({ type: "USER", payload: true });
       toast.success("Successfully Logged In 🎉");

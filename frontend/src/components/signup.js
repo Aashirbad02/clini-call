@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-import { URL } from "../App";
+import { axiosApp1 } from "../utils/axiosConfig";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -41,7 +40,7 @@ const SignUp = () => {
       cfpassword,
     } = user;
 
-    const res = await axios.post(`/register`, {
+    const res = await axiosApp1.post("register", {
       name,
       email,
       phone,
@@ -53,24 +52,17 @@ const SignUp = () => {
       cfpassword,
     });
     const data = res;
-
+    console.log(data);
     if (data.status === 422 || !data) {
-      data.json().then((e) => {
-        toast.error(e.error);
-        console.log(e.error);
-      });
+      toast.error("Registration Failed");
     } else {
-      data.json().then((e) => {
-        toast.success("Successfully Registered");
-        console.log(e.message);
-      });
-
+      toast.success("Successfully Registered");
       navigate("/login");
     }
   };
   return (
-    <div className="h-600 p-6  bg-gray-100 flex items-center justify-center">
-      <div className="container flex max-w-screen-lg mx-auto mt-10">
+    <div className="h-600 p-6  bg-gray-100 flex items-center">
+      <div className="container flex max-w-screen-lg mx-auto mt-10  justify-center">
         <div className="md:block hidden w-1/2 h-3/4 ">
           <img
             className="rounded-2xl object-cover"
@@ -134,45 +126,65 @@ const SignUp = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label for="bloodg">Blood Group</label>
+                    <label htmlFor="bloodg">Blood Group</label>
                     <select
-                      id="countries"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      id="bloodg"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      name="bloodg"
+                      type="text"
+                      value={user.bloodg}
+                      onChange={handleInput}
                     >
                       <option>Choose</option>
-                      <option value="US">A+</option>
-                      <option value="CA">A-</option>
-                      <option value="FR">B+</option>
-                      <option value="DE">B-</option>
-                      <option value="DE">AB+</option>
-                      <option value="DE">AB-</option>
-                      <option value="DE">O+</option>
-                      <option value="DE">O-</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
                     </select>
+                  </div>
+                  <div className="md:col-span-2">
+                    <label htmlFor="gender">Gender</label>
+                    <select
+                      id="gender"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      name="gender"
+                      type="text"
+                      value={user.gender}
+                      onChange={handleInput}
+                    >
+                      <option>Choose</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  {/* <div className="md:col-span-2">
+                    <label htmlFor="bloodg"> Blood Group</label>
                     <input
                       type="text"
+                      className="block border border-grey-light w-full p-2 rounded mb-2"
+                      name="bloodg"
+                      placeholder="B+"
                       value={user.bloodg}
                       onChange={handleInput}
                     />
                   </div>
                   <div className="md:col-span-2">
                     <label htmlFor="gender">Gender</label>
-                    <select
-                      id="countries"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    >
-                      <option>Choose</option>
-                      <option value="US">Male</option>
-                      <option value="CA">Female</option>
-                      <option value="CA">Other</option>
-                    </select>
                     <input
                       type="text"
+                      className="block border border-grey-light w-full p-2 rounded mb-2"
+                      name="gender"
+                      placeholder="Female"
                       value={user.gender}
                       onChange={handleInput}
                     />
-                  </div>
-
+                  </div> */}
                   <div className="md:col-span-2">
                     <label htmlFor="pincode"> Pincode</label>
                     <input

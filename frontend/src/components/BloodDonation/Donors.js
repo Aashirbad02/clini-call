@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from "react";
 import Donor from "./Donor";
-import axios from "axios";
-import { URL } from "../../App";
 import { axiosApp1 } from "../../utils/axiosConfig";
 
-const Donors = ({}) => {
+const Donors = () => {
   const [search, setSearch] = useState("");
   const [donorsData, setDonorsData] = useState([]);
 
   const getBloodGroup = async () => {
     try {
       const res = await axiosApp1.get("getData");
+      console.log(res.data);
       setDonorsData(res.data);
     } catch (error) {
       console.log(error.message);
@@ -24,10 +23,10 @@ const Donors = ({}) => {
 
   return (
     <div>
-      <div className=" relative overflow-x-auto sm:rounded-lg">
-        <div className="text-2xl my-2 mx-auto flex justify-center font-semibold">
-          Donors Near You
-        </div>
+      <div className="text-2xl my-2 mx-auto flex justify-center font-semibold">
+        Donors Near You
+      </div>
+      <div className=" relative overflow-x-auto sm:rounded-lg h-72">
         <div className="flex items-center justify-center pb-4 ">
           <label
             htmlFor="table-search"
@@ -66,16 +65,16 @@ const Donors = ({}) => {
         <table className="md:w-full text-sm text-left text-gray-500 ">
           <thead className=" w-full text-xs text-gray-700 uppercase bg-gray-50">
             <tr className="md:w-full">
-              <th scope="col" className="px-20 py-3">
+              <th scope="col" className="pl-16 py-3">
                 Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="pr-8 py-3">
                 Blood Group
               </th>
-              <th scope="col" className="px-8 py-3">
+              <th scope="col" className="px-6 py-3">
                 Phone Number
               </th>
-              <th scope="col" className="px-16 py-3">
+              <th scope="col" className="px-4 py-3">
                 Pincode
               </th>
             </tr>
@@ -83,7 +82,7 @@ const Donors = ({}) => {
           <tbody>
             {donorsData
               .filter((data) => {
-                return search === "" ? data : data.pincode.includes(search);
+                return search === "" ? data : data.name.includes(search);
               })
               .map((data) => (
                 <Donor

@@ -31,7 +31,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 h-[100vh] pt-20">
+    <div className="pt-20">
       <div className="container mx-auto p-5">
         <div className="md:flex no-wrap md:-mx-2 ">
           <div className="w-full mx-2 h-64">
@@ -95,15 +95,15 @@ const Dashboard = () => {
             <div className="bg-white shadow-sm rounded-sm">
               <div className="md:flex justify-around">
                 <div className="p-4">
-                  <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                  <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3 mx-auto justify-center">
                     <BloodtypeIcon />
                     <span className="tracking-wide">Blood Donation Chart</span>
                   </div>
-                  <div>
+                  <div className="mx-auto flex justify-center">
                     <img
                       src="https://res.cloudinary.com/ash123/image/upload/v1674645136/blood_donation_chart_l6qfsr.png"
                       alt="Blood Donation Chart"
-                      className="h-24 w-24 lg:h-64 lg:w-96"
+                      className="h-48 w-72 lg:h-64 lg:w-96"
                     />
                   </div>
                 </div>
