@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
             </h1>
             {/* <p className='text-2xl'>This is our Tech brand.</p> */}
             <button className="md:py-3  px-4 my-12 text-md py-2 bg-indigo-700 rounded-md text-white sm:w-[60%] w-[50%] mx-auto md:mx-2 md:my-12">
-              Looking for doctor
+               <NavLink className='nav-link' to='/login' > Looking for doctor</NavLink>
             </button>
           </div>
           <div>

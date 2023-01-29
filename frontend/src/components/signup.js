@@ -70,7 +70,7 @@ const SignUp = () => {
   };
   return (
     <div className="h-600 p-6  bg-gray-100 flex items-center justify-center">
-      <div className="container flex max-w-screen-lg mx-auto mt-10">
+      <div className="container justify-center flex max-w-screen-lg mx-auto mt-10">
         <div className="md:block hidden w-1/2 h-3/4 ">
           <img
             className="rounded-2xl object-cover"
@@ -145,14 +145,14 @@ const SignUp = () => {
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
                       <option>Choose</option>
-                      <option value="US">A+</option>
-                      <option value="CA">A-</option>
-                      <option value="FR">B+</option>
-                      <option value="DE">B-</option>
-                      <option value="DE">AB+</option>
-                      <option value="DE">AB-</option>
-                      <option value="DE">O+</option>
-                      <option value="DE">O-</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
                     </select>
                    
                   </div>
@@ -168,9 +168,9 @@ const SignUp = () => {
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
                       <option>Choose</option>
-                      <option value="US">Male</option>
-                      <option value="CA">Female</option>
-                      <option value="CA">Other</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
                     </select>
                   
                   </div>
